@@ -4,6 +4,6 @@ import "fmt"
 
 func main() {
 
-    fmt.Println("Hello pipeline!")
+    fmt.Println("Hello CI/CD pipeline!")
 }
 
