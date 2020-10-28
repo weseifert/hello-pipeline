@@ -7,7 +7,7 @@ build:
 
     - script:
         name: env
-	code: env
+        code: env
 
     - script:
         name: go get
