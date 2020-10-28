@@ -49,11 +49,3 @@ deploy:
        tag: latest
        repository: weseifert/hello-pipeline
        registry: https://registry.hub.docker.com
-
-   - cng/cf-deploy:
-       api: $API
-       user: $USER
-       org: $ORG
-       space: $SPACE
-       appname: wercker-step-hello-pipeline
-       docker_image: weseifert/hello-pipeline
