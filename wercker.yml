@@ -45,7 +45,6 @@ deploy:
        username: $DOCKER_USERNAME
        password: $DOCKER_PASSWORD
        cmd: /pipeline/source/hello-pipeline
-       port: "8080"
        tag: latest
        repository: weseifert/hello-pipeline
        registry: https://registry.hub.docker.com
