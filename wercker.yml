@@ -3,10 +3,10 @@ box: golang
 build:
   steps:
     - setup-go-workspace:
-	package-dir: github.com/weseifert/hello-pipeline
+        package-dir: github.com/weseifert/hello-pipeline
 
     - script:
-	name: env
+        name: env
 	code: env
 
     - script:
