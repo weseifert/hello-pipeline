@@ -1,0 +1,23 @@
+box: wercker/golang
+
+build:
+  steps:
+    - setup-go-workspace:
+        package-dir: github.com/cloudnativego/wercker-step-cf-push
+
+    - script:
+        name: go get
+        code: |
+          cd $WERCKER_SOURCE_DIR
+          go version
+          export PATH=$WERCKER_SOURCE_DIR/bin:$PATH
+
+    - script:
+        name: go build
+        code: |
+          go build -o cf-push-step
+
+    - script:
+        name: copy files to wercker output
+        code: |
+          cp -R ./ ${WERCKER_OUTPUT_DIR}

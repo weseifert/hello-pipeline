@@ -1,5 +1,18 @@
 box: golang
 
+dev:
+  steps:
+    - setup-go-workspace:
+        package-dir: github.com/weseifert/hello-pipeline
+
+    - script:
+        name: env
+        code: env
+
+    - internal/watch:
+        code: go run hello-pipeline.go
+        reload: true
+
 build:
   steps:
     - setup-go-workspace:
@@ -35,3 +48,11 @@ deploy:
        tag: latest
        repository: weseifert/hello-pipeline
        registry: https://registry.hub.docker.com
+
+   - cng/cf-deploy:
+       api: $API
+       user: $USER
+       org: $ORG
+       space: $SPACE
+       appname: wercker-step-hello-pipeline
+       docker_image: weseifert/hello-pipeline

@@ -1,0 +1,39 @@
+name: cf-deploy
+version: 0.1.0
+summary: Deploy application to Cloud Foundry via `cf push`
+category: imported
+tags:
+- pivotal
+- cloudfoundry
+- cloud
+- push
+- cf
+properties:
+- name: docker_image
+  type: string
+  required: false
+  default: ""
+- name: appname
+  type: string
+  required: true
+  default: ""
+- name: space
+  type: string
+  required: true
+  default: ""
+- name: org
+  type: string
+  required: true
+  default: ""
+- name: password
+  type: string
+  required: true
+  default: ""
+- name: user
+  type: string
+  required: true
+  default: ""
+- name: api
+  type: string
+  required: true
+  default: ""
